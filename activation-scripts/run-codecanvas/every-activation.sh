@@ -11,3 +11,6 @@ until curl -s --head --fail "http://localhost:8001" | grep -q "200 OK"; do
 done
 echo "Open Sandbox"
 canvas run-configuration codecanvas "Open Sandbox"
+until curl -s --head --fail "" | grep -q "200 OK"; do
+  sleep 1
+done
