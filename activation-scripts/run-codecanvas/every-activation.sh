@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Working directory: $PWD"
+
+REPO_PATH=$PWD
+
 cd /mnt/jetbrains/work/codecanvas
 
 $REPO_PATH/scripts/create-vscode-run-configuration.sh
