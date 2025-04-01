@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /mnt/jetbrains/work/codecanvas
+
 $REPO_PATH/scripts/create-vscode-run-configuration.sh
 
 echo "Run Sandbox"
