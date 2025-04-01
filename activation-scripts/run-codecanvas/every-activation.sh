@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$REPO_PATH/scripts/create-cursor-run-configuration.sh
+$REPO_PATH/scripts/create-vscode-run-configuration.sh
 
 echo "Run Sandbox"
 canvas run-configuration codecanvas "Run Sandbox"
