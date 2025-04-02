@@ -15,7 +15,7 @@ echo "Run Sandbox"
 canvas run-configuration codecanvas "Run Sandbox"
 
 echo "Wait for Storybook to open"
-$REPO_PATH/scripts/waitFor.sh "http://localhost:8001"
+$REPO_PATH/scripts/waitFor.sh "http://localhost:6006"
 
 echo "Open Storybook"
 canvas run-configuration codecanvas "Open Stroybook"
