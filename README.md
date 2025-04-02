@@ -12,3 +12,9 @@ Run CodeCanvas at startup
 repo = https://github.com/Skolotsky/personal-scripts.git
 every_activation = activation-scripts/run-codecanvas/every-activation.sh
 ```
+
+Run CodeCanvas for designers at startup
+```
+repo = https://github.com/Skolotsky/personal-scripts.git
+every_activation = activation-scripts/codecanvas-for-designers/every-activation.sh
+```
