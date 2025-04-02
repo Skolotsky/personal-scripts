@@ -1,10 +1,6 @@
 #!/bin/bash
 
-echo "Run Storybook"
-canvas run-configuration codecanvas "Run Storybook"
-
-echo "Wait for Storybook to be ready"
-$REPO_PATH/scripts/waitFor.sh "http://localhost:6006"
+$REPO_PATH/activation-scripts/run-codecanvas/run-storybook.sh
 
 echo "Open Storybook"
 canvas run-configuration codecanvas "Open Storybook"
