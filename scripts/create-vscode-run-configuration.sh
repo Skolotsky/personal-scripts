@@ -11,55 +11,30 @@ echo $VSCODE_URI
 # Create tmp directory if it doesn't exist
 mkdir -p tmp
 
-cat > ./tmp/cursor.html << EOF
+# Function to generate HTML files
+generate_html() {
+  local file_path=$1
+  local uri=$2
+  cat > "$file_path" << EOF
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Redirecting to Cursor...</title>
+    <title>Redirecting...</title>
     <script>
-      window.location.href = "$CURSOR_URI";
+      window.location.href = "$uri";
+      setTimeout(() => window.close(), 10000)
     </script>
   </head>
   <body>
-    <p>Redirecting to Cursor…</p>
-    <a href="$CURSOR_URI">Click here if nothing happens</a>
+    <p>Redirecting…</p>
+    <a href="$uri">Click here if nothing happens</a>
   </body>
 </html>
 EOF
+}
 
-cat > ./tmp/vscode.html << EOF
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Redirecting to Cursor...</title>
-    <script>
-      window.location.href = "$VSCODE_URI";
-    </script>
-  </head>
-  <body>
-    <p>Redirecting to Cursor…</p>
-    <a href="$VSCODE_URI">Click here if nothing happens</a>
-  </body>
-</html>
-EOF
+# Generate HTML files for Cursor and VS Code
+generate_html ./tmp/cursor.html "$CURSOR_URI"
+generate_html ./tmp/vscode.html "$VSCODE_URI"
 
-# Create the .idea/runConfigurations directory if it doesn't exist
-# mkdir -p .idea/runConfigurations
-
-# Create the XML content with the generated URI
-# cat > ./.idea/runConfigurations/Cursor.xml << EOF
-# <component name="ProjectRunConfigurationManager">
-#   <configuration default="false" name="Cursor" type="JavascriptDebugType" uri="http://localhost:50546/codecanvas/tmp/cursor.html" useBuiltInWebServerPort="true">
-#     <method v="2" />
-#   </configuration>
-# </component>
-# EOF
-
-# Create the XML content with the generated URI
-# cat > ./.idea/runConfigurations/VS_Code.xml << EOF
-# <component name="ProjectRunConfigurationManager">
-#   <configuration default="false" name="VS Code" type="JavascriptDebugType" uri="http://localhost:50546/codecanvas/tmp/cursor.html" useBuiltInWebServerPort="true">
-#     <method v="2" />
-#   </configuration>
-# </component>
-# EOF
+(cd ./tmp && python3 -m http.server 54321 > /dev/null 2>&1) &

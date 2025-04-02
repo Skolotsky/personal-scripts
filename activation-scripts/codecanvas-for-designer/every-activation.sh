@@ -20,9 +20,6 @@ $REPO_PATH/scripts/waitFor.sh "http://localhost:8001"
 echo "Open Storybook"
 canvas run-configuration codecanvas "Open Stroybook"
 
-echo "Open Cursor"
-canvas run-configuration codecanvas "Cursor"
-
 echo "Wait for Sandbox to open"
 $REPO_PATH/scripts/waitFor.sh "http://localhost:8001"
 
