@@ -8,5 +8,5 @@ echo "Run CodeCanvas Web Client"
 canvas run-configuration codecanvas "webpack-dev-server"
 
 echo "Wait for CodeCanvas Web Client to be ready"
-$REPO_PATH/scripts/waitFor.sh "http://localhost:8000/health"
+./deployments/kubernetes/.ci/spaceport/wait-healthcheck.sh http://localhost:8000/health
 echo "CodeCanvas is up and running"
