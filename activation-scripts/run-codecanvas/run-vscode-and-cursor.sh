@@ -19,6 +19,9 @@ generate_html() {
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Redirecting...</title>
     <script>
       window.location.href = "$uri";
